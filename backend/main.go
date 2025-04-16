@@ -172,7 +172,6 @@ func deleteUser(db *sql.DB) http.HandlerFunc {
 		} else {
 			_, err := db.Exec("DELETE FROM users WHERE id = $1", id)
 			if err != nil {
-				//todo : fix error handling
 				w.WriteHeader(http.StatusNotFound)
 				return
 			}
